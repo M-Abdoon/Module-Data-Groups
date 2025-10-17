@@ -6,6 +6,4 @@ function calculateMean(list) {
     }
     return Math.floor(totalSum / listLength);
 }
-
-console.log(calculateMean([9,6,1,1]));
 module.exports = calculateMean;
