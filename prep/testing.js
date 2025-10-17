@@ -1,11 +1,18 @@
-const calculateMean = require("./mean");
-const calculateMedian = require("./median");
+// Write a function which takes an array as a parameter
+//   and swaps the first element with the last element
 
-const salaries = [10, 20, 30, 40, 60, 80, 80];
-const median = calculateMedian(salaries);
+function swapFirstAndLast(arr) {
+    newArr = [];
+    let swap = arr[0];
+    arr[0] = arr[arr.length - 1];
+    arr[arr.length -1] = swap;
 
-console.log(salaries, "<--- salaries input before we call calculateMean");
-const mean = calculateMean(salaries);
+    for (const item of arr) {
+        newArr.push(item);
+    }
+    return newArr;
+}
 
-console.log(`The median salary is ${median}`);
-console.log(`The mean salary is ${mean}`);
+const myArray = [5, 2, 3, 4, 7, 5, 7, 9, 1, 3, 1, 5, 7, 8 ,0 ,9];
+swapFirstAndLast(myArray);
+console.log(myArray); // what output should we expect?
