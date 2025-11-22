@@ -2,6 +2,11 @@ function setAlarm() {
   const timer = Number(document.querySelector("#alarmSet").value);
   const timeRemainingEl = document.querySelector("#timeRemaining");
 
+  document.getElementById("pause").addEventListener("click", () => {
+      pauseAlarm();
+      clearInterval(doAlarm);
+    });
+
   let targetTime = new Date().getTime() + timer * 1000;
 
   const doAlarm = setInterval( () => {
@@ -28,12 +33,7 @@ function formatTimeMMSS (seconds) {
 
 var audio = new Audio("alarmsound.mp3");
 
-function setup() {
-  document.getElementById("pause").addEventListener("click", () => {
-      pauseAlarm();
-      clearInterval(doAlarm);
-    });
-      
+function setup() {   
   document.getElementById("set").addEventListener("click", () => {
     setAlarm();
   });
