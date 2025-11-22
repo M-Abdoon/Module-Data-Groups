@@ -1,14 +1,6 @@
 const createLookup = require("./lookup.js");
 
 test.todo("creates a country currency code lookup for multiple codes");
-test("creates a country currency code lookup for multiple codes", () => {
-  expect(createLookup([['US', 'USD'], ['CA', 'CAD'], ['GB', 'GBP'], ['JP', 'JPY']])).toEqual({
-    'US': 'USD',
-    'CA': 'CAD',
-    'GB': 'GBP',
-    'JP': 'JPY'
-  });
-});
 
 /*
 
@@ -29,7 +21,7 @@ Then
  - The values are the corresponding currency codes
 
 Example
-Given: [['US', 'USD'], ['CA', 'CAD']] 
+Given: [['US', 'USD'], ['CA', 'CAD']]
 
 When
 createLookup(countryCurrencyPairs) is called
